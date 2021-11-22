@@ -5,7 +5,7 @@ import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 
-@ConfigurationProperties(value = "sfg.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(value = "wsm.brewery", ignoreUnknownFields = false)
 @ConstructorBinding
 @AllArgsConstructor
 @Getter
