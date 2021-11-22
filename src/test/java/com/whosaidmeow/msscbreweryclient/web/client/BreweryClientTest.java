@@ -1,6 +1,7 @@
 package com.whosaidmeow.msscbreweryclient.web.client;
 
 import com.whosaidmeow.msscbreweryclient.web.model.BeerDTO;
+import com.whosaidmeow.msscbreweryclient.web.model.CustomerDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,5 +43,33 @@ class BreweryClientTest {
     @Test
     void shouldDeleteBeer() {
         underTest.deleteBeer(UUID.randomUUID());
+    }
+
+    @Test
+    void shouldGetCustomerById() {
+        CustomerDTO result = underTest.getCustomerById(UUID.randomUUID());
+
+        assertNotNull(result);
+    }
+
+    @Test
+    void shouldSaveCustomer() {
+        CustomerDTO customerDTO = CustomerDTO.builder().build();
+
+        URI uri = underTest.saveCustomer(customerDTO);
+
+        assertNotNull(uri);
+    }
+
+    @Test
+    void shouldUpdateCustomer() {
+        CustomerDTO customerDTO = CustomerDTO.builder().build();
+
+        underTest.updateCustomer(UUID.randomUUID(), customerDTO);
+    }
+
+    @Test
+    void shouldDeleteCustomer() {
+        underTest.deleteCustomer(UUID.randomUUID());
     }
 }
